@@ -10,5 +10,10 @@ export const articlesSlice = createSlice({
 });
 
 export const selectArticles = (state) => state.articles.articles;
-export const filterArticles = (query, articles) => Object.values(articles).filter(article => article.title.toLowerCase().includes(query.toLowerCase()))
+export const filterArticles = (query, articles) => {
+    return Object.values(articles).filter(article => {
+        return article.title.toLowerCase().includes(query.toLowerCase())
+    })
+}
+//export const filterArticles = (query, articles) => Object.values(articles).filter(article => article.title.toLowerCase().includes(query.toLowerCase()))
 export default articlesSlice.reducer;
